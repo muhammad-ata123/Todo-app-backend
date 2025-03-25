@@ -31,12 +31,12 @@ A production-ready GraphQL API for Todo management with NestJS, implementing ind
 
 #### 1. Clone the repository
 ```sh
-git clone <repository-url>
+git clone https://github.com/muhammad-ata123/Todo-app-backend.git
 ```
 
 #### 2. Navigate to the project directory
 ```sh
-cd <project-directory>
+cd Todo-app-backend
 ```
 
 #### 3. Install dependencies
