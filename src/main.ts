@@ -1,17 +1,26 @@
 /* eslint-disable prettier/prettier */
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import * as dotenv from 'dotenv';
+import { ConfigService } from '@nestjs/config';
+
+dotenv.config({ path: ".env" });
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  
-  // Enable CORS with proper configuration
+  const configService = app.get(ConfigService);
+
+  const frontendUrl = configService.get<string>('FRONTEND_URL');
+  const PORT = configService.get<number>('BACKEND_PORT') || 5000;
+
+  console.log(`FRONTEND_URL: ${frontendUrl}, PORT: ${PORT}`);
+
   app.enableCors({
-    origin: 'http://localhost:5173', // Your Vite frontend URL
+    origin: frontendUrl || '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type,Authorization',
     credentials: true,
   });
 
-  await app.listen(3000);
+  await app.listen(PORT);
 }
-bootstrap();
+void bootstrap();
