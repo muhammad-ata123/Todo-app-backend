@@ -1,7 +1,11 @@
-
 # Todo GraphQL API (NestJS Backend)
 
 A production-ready GraphQL API for Todo management with NestJS, implementing industry best practices for type safety, efficient data fetching, and modular architecture.
+
+## 🎥 Backend API Demo
+
+[![Watch the demo](src/demo/thumbnailImage.png)](src/demo//Todo-App-Backend-Demo.mp4)
+
 
 ## Features
 
