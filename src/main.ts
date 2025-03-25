@@ -12,8 +12,6 @@ async function bootstrap() {
   const frontendUrl = configService.get<string>('FRONTEND_URL');
   const PORT = configService.get<number>('BACKEND_PORT') || 5000;
 
-  console.log(`FRONTEND_URL: ${frontendUrl}, PORT: ${PORT}`);
-
   app.enableCors({
     origin: frontendUrl || '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
