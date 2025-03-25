@@ -120,7 +120,7 @@ export class TodoResolver {
   toggleTodoStatus(@Args('id', { type: () => ID }) id: string): Todo {
     const todoIndex = this.todos.findIndex(t => t.id === id);
     if (todoIndex === -1) {
-      throw new Error(`Todo with ID ${id} not found`);
+      throw new NotFoundException(`Todo with ID ${id} not found`);
     }
 
     const updatedTodo = {

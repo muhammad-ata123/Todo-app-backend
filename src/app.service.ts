@@ -4,6 +4,7 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   getHello(): string {
-    return 'Hello World Nabeel!';
+    // entry route 
+    return 'Hello World!';
   }
 }
